@@ -29,8 +29,8 @@
            <el-col :span="4">
              <el-button  id="varukorg" icon="el-icon-search" circle></el-button>
               <router-link to="/varukorg">
-            <el-badge :value="3" class="item">
-  <el-button   icon="el-icon-goods" circle></el-button>
+            <el-badge :value="countProduktsCheckout" class="item" >
+  <el-button   icon="el-icon-goods" round>Varukorg</el-button>
 </el-badge>
              
              
@@ -62,10 +62,20 @@
  
   components: {
     Footer
- }}
+ },
+  computed: {
+  ...mapGetters([
+      'countProduktsCheckout'
+      
+    ])
+ }
+ }
 </script>
 
 <style>
+#badgePosition{
+  right: 22px;
+}
 #allertTop {
   background-color: rgb(249, 234, 250);
   font-size: 0.8em;
